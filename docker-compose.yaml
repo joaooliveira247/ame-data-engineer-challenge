@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  spark:
+    image: bitnami/spark:3.5.1-debian-12-r6
+    restart: "no"
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_USER=spark
+    ports:
+      - '8080:8080'
+  dw_ame:
+    image: postgres:11-alpine
+    restart: "no"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_DB: dw_ame
+    ports:
+      - 5432:5432
