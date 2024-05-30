@@ -13,6 +13,7 @@ services:
       - SPARK_USER=spark
     ports:
       - '8080:8080'
+      - '7077:7077'
   dw_ame:
     image: postgres:11-alpine
     restart: "no"
