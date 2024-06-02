@@ -37,6 +37,13 @@ CREATE TABLE IF NOT EXISTS resp_tools (
 );
 """
 
+CREATE_TABLE_PROGRAMMING_LANGUAGE: str = """
+CREATE TABLE IF NOT EXISTS programming_language (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
+)
+"""
+
 
 def main() -> None: ...
 
