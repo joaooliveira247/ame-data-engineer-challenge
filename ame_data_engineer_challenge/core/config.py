@@ -13,5 +13,12 @@ class Settings(BaseSettings):
 
     model_config = SettingsConfigDict(env_file=".env")
 
+    @property
+    def db_url(self) -> str:
+        return (
+            f"postgresql://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:"
+            f"{self.DB_PORT}/{self.DB_NAME}"
+        )
+
 
 settings = Settings()
