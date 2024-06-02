@@ -23,6 +23,13 @@ CREATE TABLE IF NOT EXISTS respondent (
 );
 """
 
+CREATE_TABLE_COMMUNICATIONS_TOOLS: str = """
+CREATE TABLE IF NOT EXISTS communications_tools (
+    id SERIAL PRIMARY KEY,
+    Name VARCHAR(255)
+);
+"""
+
 
 def main() -> None: ...
 
