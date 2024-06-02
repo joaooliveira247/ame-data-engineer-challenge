@@ -9,6 +9,8 @@ readme = "README.md"
 python = "^3.10"
 pyspark = "^3.5.1"
 pydantic-settings = "^2.2.1"
+psycopg = "^3.1.19"
+psycopg-binary = "^3.1.19"
 
 
 [tool.poetry.group.dev.dependencies]
