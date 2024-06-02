@@ -1,3 +1,5 @@
+from psycopg import Connection, connect
+
 CREATE_TABLE_OS: str = """
 CREATE TABLE IF NOT EXISTS operation_system(id SERIAL PRIMARY KEY, name VARCHAR(100));
 """
@@ -51,6 +53,12 @@ CREATE TABLE IF NOT EXISTS resp_programming_language (
     moment BOOLEAN
 )
 """
+
+
+def query_execute(conn: Connection, query: str) -> None:
+    with conn.cursor() as cur:
+        cur.execute(query)
+    conn.commit()
 
 
 def main() -> None: ...
