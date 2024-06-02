@@ -10,6 +10,19 @@ CREATE_TABLE_COMPANY: str = """
 CREATE TABLE IF NOT EXISTS company(id SERIAL PRIMARY KEY, name VARCHAR(100));
 """
 
+CREATE_TABLE_RESPONDENT: str = """
+CREATE TABLE IF NOT EXISTS respondent (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    open_source BOOLEAN,
+    hobby BOOLEAN,
+    salary DECIMAL,
+    operation_system_id INTEGER REFERENCES operation_system(id),
+    country_id INTEGER REFERENCES country(id),
+    company_id INTEGER REFERENCES company(id)
+);
+"""
+
 
 def main() -> None: ...
 
