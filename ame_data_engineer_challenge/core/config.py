@@ -20,5 +20,12 @@ class Settings(BaseSettings):
             f"{self.DB_PORT}/{self.DB_NAME}"
         )
 
+    @property
+    def db_conn_info(self) -> str:
+        return (
+            f"dbname={self.DB_NAME} user={self.DB_USER} password="
+            f"{self.DB_PASS} host={self.DB_HOST} port={self.DB_PORT}"
+        )
+
 
 settings = Settings()
