@@ -2,6 +2,13 @@ from pyspark.sql import SparkSession, DataFrame
 from core.config import settings
 
 
+PROPERTIES: dict[str, str] = {
+    "user": f"{settings.DB_USER}",
+    "password": f"{settings.DB_PASS}",
+    "driver": settings.SPARK_DB_DRIVER,
+}
+
+
 def get_session() -> SparkSession:
     return (
         SparkSession.builder.master(settings.SPARK_URL)
@@ -15,16 +22,19 @@ def get_session() -> SparkSession:
 
 
 def save_on_database(df: DataFrame, table_name: str) -> None:
-    properties: dict[str, str] = {
-        "user": f"{settings.DB_USER}",
-        "password": f"{settings.DB_PASS}",
-        "driver": settings.SPARK_DB_DRIVER,
-    }
-
     df.write.jdbc(
         url=f"jdbc:postgresql://{settings.DB_HOST}:{settings.DB_PORT}/"
         f"{settings.DB_NAME}",
         table=table_name,
         mode="append",
-        properties=properties,
+        properties=PROPERTIES,
+    )
+
+
+def get_from_database(spark_session: SparkSession, table_name: str) -> DataFrame:
+    return spark_session.read.jdbc(
+        url=f"jdbc:postgresql://{settings.DB_HOST}:{settings.DB_PORT}/"
+        f"{settings.DB_NAME}",
+        table=table_name,
+        properties=PROPERTIES,
     )
