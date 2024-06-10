@@ -12,6 +12,8 @@ class Settings(BaseSettings):
     DB_PORT: str
     DB_NAME: str
     BASE_DIR: Path = Path(__file__).parent.parent
+    DOLLAR_EXCHANGE: float = 3.81
+    YEAR_MONTHS: int = 12
 
     model_config = SettingsConfigDict(env_file=".env")
 
