@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS programming_language (
 CREATE_TABLE_RESP_PROGRAMMING_LANGUAGE: str = """
 CREATE TABLE IF NOT EXISTS resp_programming_language (
     respondent_id INTEGER REFERENCES respondent(id),
-    programming_language_id INTEGER REFERENCES programming_language(id),
+    programming_language_id INTEGER REFERENCES programming_language(id)
 )
 """
 
