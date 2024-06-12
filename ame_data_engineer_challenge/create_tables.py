@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS communications_tools (
 CREATE_TABLE_RESP_TOOLS: str = """
 CREATE TABLE IF NOT EXISTS resp_tools (
     communications_tools_id INTEGER REFERENCES communications_tools(id),
-    respodent_id INTEGER REFERENCES respondent(id)
+    respondent_id INTEGER REFERENCES respondent(id)
 );
 """
 
