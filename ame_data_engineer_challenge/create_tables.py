@@ -56,6 +56,17 @@ CREATE TABLE IF NOT EXISTS resp_programming_language (
 )
 """
 
+DELETE_ALL_TABLES: str = """
+do $$ declare
+    r record;
+begin
+    for r in (select tablename from pg_tables where schemaname = 'public') loop
+        execute 'drop table if exists ' || quote_ident(r.tablename) || ' cascade';
+    end loop;
+end $$;
+
+"""
+
 
 def query_execute(conn: Connection, query: str) -> None:
     with conn.cursor() as cur:
@@ -81,10 +92,15 @@ def main() -> None:
 
             for table in tables:
                 query_execute(conn, table)
+            print("Create all tables.")
+            return
         case "delete":
-            print("delete")
+            query_execute(conn, DELETE_ALL_TABLES)
+            print("Delete all tables.")
+            return
         case _:
             print(f"Option '{argv[1]}' not found")
+            return
 
 
 if __name__ == "__main__":
