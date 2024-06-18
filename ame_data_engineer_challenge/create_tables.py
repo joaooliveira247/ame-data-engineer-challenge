@@ -1,5 +1,7 @@
-from psycopg import Connection, connect
+from sys import argv
+
 from core.config import settings
+from psycopg import Connection, connect
 
 CREATE_TABLE_OS: str = """
 CREATE TABLE IF NOT EXISTS operation_system(id SERIAL PRIMARY KEY, name VARCHAR(100) UNIQUE);
@@ -64,18 +66,25 @@ def query_execute(conn: Connection, query: str) -> None:
 def main() -> None:
     conn: Connection = connect(settings.db_conn_info)
 
-    tables: list[str] = [
-        CREATE_TABLE_OS,
-        CREATE_TABLE_COUNTRY,
-        CREATE_TABLE_COMPANY,
-        CREATE_TABLE_RESPONDENT,
-        CREATE_TABLE_COMMUNICATIONS_TOOLS,
-        CREATE_TABLE_RESP_TOOLS,
-        CREATE_TABLE_PROGRAMMING_LANGUAGE,
-        CREATE_TABLE_RESP_PROGRAMMING_LANGUAGE,
-    ]
-    for table in tables:
-        query_execute(conn, table)
+    match argv[1]:
+        case "create":
+            tables: list[str] = [
+                CREATE_TABLE_OS,
+                CREATE_TABLE_COUNTRY,
+                CREATE_TABLE_COMPANY,
+                CREATE_TABLE_RESPONDENT,
+                CREATE_TABLE_COMMUNICATIONS_TOOLS,
+                CREATE_TABLE_RESP_TOOLS,
+                CREATE_TABLE_PROGRAMMING_LANGUAGE,
+                CREATE_TABLE_RESP_PROGRAMMING_LANGUAGE,
+            ]
+
+            for table in tables:
+                query_execute(conn, table)
+        case "delete":
+            print("delete")
+        case _:
+            print(f"Option '{argv[1]}' not found")
 
 
 if __name__ == "__main__":
