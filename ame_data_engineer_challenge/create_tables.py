@@ -28,8 +28,8 @@ CREATE TABLE IF NOT EXISTS respondent (
 );
 """
 
-CREATE_TABLE_COMMUNICATIONS_TOOLS: str = """
-CREATE TABLE IF NOT EXISTS communications_tools (
+CREATE_TABLE_COMMUNICATION_TOOLS: str = """
+CREATE TABLE IF NOT EXISTS communication_tools (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) UNIQUE
 );
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS communications_tools (
 
 CREATE_TABLE_RESP_TOOLS: str = """
 CREATE TABLE IF NOT EXISTS resp_tools (
-    communications_tools_id INTEGER REFERENCES communications_tools(id),
+    communication_tools_id INTEGER REFERENCES communication_tools(id),
     respondent_id INTEGER REFERENCES respondent(id)
 );
 """
@@ -84,7 +84,7 @@ def main() -> None:
                 CREATE_TABLE_COUNTRY,
                 CREATE_TABLE_COMPANY,
                 CREATE_TABLE_RESPONDENT,
-                CREATE_TABLE_COMMUNICATIONS_TOOLS,
+                CREATE_TABLE_COMMUNICATION_TOOLS,
                 CREATE_TABLE_RESP_TOOLS,
                 CREATE_TABLE_PROGRAMMING_LANGUAGE,
                 CREATE_TABLE_RESP_PROGRAMMING_LANGUAGE,
