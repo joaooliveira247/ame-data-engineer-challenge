@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from sys import argv
 
 from core.config import settings
