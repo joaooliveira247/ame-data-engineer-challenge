@@ -1,6 +1,5 @@
-from pyspark.sql import SparkSession, DataFrame
 from core.config import settings
-
+from pyspark.sql import DataFrame, SparkSession
 
 PROPERTIES: dict[str, str] = {
     "user": f"{settings.DB_USER}",
@@ -31,7 +30,9 @@ def save_on_database(df: DataFrame, table_name: str) -> None:
     )
 
 
-def get_from_database(spark_session: SparkSession, table_name: str) -> DataFrame:
+def get_from_database(
+    spark_session: SparkSession, table_name: str
+) -> DataFrame:
     return spark_session.read.jdbc(
         url=f"jdbc:postgresql://{settings.DB_HOST}:{settings.DB_PORT}/"
         f"{settings.DB_NAME}",
