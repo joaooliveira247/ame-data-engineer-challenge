@@ -51,7 +51,13 @@ Este projeto utiliza um sistema de gerenciamento de pacotes e dependências cham
     ```bash
     make db-delete
     ```
+## Bibliotecas usadas 🐍:
 
+- [PySpark](https://spark.apache.org/docs/latest/api/python/index.html)
+
+- [Pydantic-settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
+
+- [Psycopg](https://www.psycopg.org/docs/index.html)
 
 ## Esse projeto foi baseado 🤝:
 
