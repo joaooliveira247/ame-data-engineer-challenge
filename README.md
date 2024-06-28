@@ -2,51 +2,57 @@
 
 [Descrição do Desafio](./docs/challenge.md)
 
-## Requirements 🧑‍💻:
-This project use a packaging and dependency management called [poetry](https://python-poetry.org/).
-- Installation:
+## Requisitos 🧑‍💻:
+Este projeto utiliza um sistema de gerenciamento de pacotes e dependências chamado [poetry](https://python-poetry.org/).
 
-    `osx / linux / bashonwindows install instructions
+- Instalação:
+
+    `osx / linux / bashonwindows instruções de instalação
     `
 
     ```bash
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
     ```
+
     `
-    windows powershell install instructions
+    windows powershell instruções de instalação
     `
+
     ```bash
     (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
     ```
-- Running:
+
+- Executando:
+
     ```bash
     poetry install
     ```
+
     ```bash
     poetry shell
     ```
 
-## Documentation 📜:
+## Documentação CLI 📜:
 
-- 🐋 Start docker with database.
+- 🐋 Inicia o "data warehouse".
 
     ```bash
     make run-docker
     ```
 
-- 📋 Create all tables in "data warehouse".
+- 📋 Cria todas as tabelas do "data warehouse".
 
     ```bash
     make db-create
     ```
 
-- 📋 Delete all tables in "data warehouse".
+- 📋 Deleta todas as tabelas do "data warehouse".
 
     ```bash
     make db-delete
     ```
 
 
-## This project was based 🤝:
+## Esse projeto foi baseado 🤝:
 
 https://github.com/AmeDigital/challenge-data-engineer
