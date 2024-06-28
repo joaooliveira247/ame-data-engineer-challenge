@@ -1,8 +1,15 @@
 # Ame Data Engineer Challenge
 
+## Documentações das estapas do processo 📜:
+
 [Descrição do Desafio](./docs/challenge.md)
 
+[Ingestão de Dados](./docs/data_ingestion.md)
+
+[Análise de Dados](./ame_data_engineer_challenge/data_analysis.ipynb)
+
 ## Requisitos 🧑‍💻:
+
 Este projeto utiliza um sistema de gerenciamento de pacotes e dependências chamado [poetry](https://python-poetry.org/).
 
 - Instalação:
