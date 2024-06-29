@@ -1,6 +1,6 @@
 # Ame Data Engineer Challenge
 
-## Documentações das estapas do processo 📜:
+## 📜 Documentações das estapas do processo:
 
 [Descrição do Desafio](./docs/challenge.md)
 
@@ -8,7 +8,17 @@
 
 [Análise de Dados](./ame_data_engineer_challenge/data_analysis.ipynb)
 
-## Requisitos 🧑‍💻:
+## ⚠️ Observações:
+
+> Observação 1
+>
+> Toda a parte de análise foi deixada em um arquivo .ipynb, pois ficaria mais fácil entender o fluxo e a resolução dos desafios.
+
+> Observação
+>
+> Fiz o desafio como se estivesse em ambiente de produção, portanto sem nenhum privilégio ou permissão.
+
+## 🧑‍💻 Requisitos:
 
 Este projeto utiliza um sistema de gerenciamento de pacotes e dependências chamado [poetry](https://python-poetry.org/).
 
@@ -39,7 +49,7 @@ Este projeto utiliza um sistema de gerenciamento de pacotes e dependências cham
     poetry shell
     ```
 
-## Documentação CLI 📜:
+## 📜 Documentação CLI:
 
 - 🐋 Inicia o "data warehouse".
 
@@ -58,7 +68,7 @@ Este projeto utiliza um sistema de gerenciamento de pacotes e dependências cham
     ```bash
     make db-delete
     ```
-## Bibliotecas usadas 🐍:
+## 🐍 Bibliotecas usadas:
 
 - [PySpark](https://spark.apache.org/docs/latest/api/python/index.html)
 
@@ -66,6 +76,10 @@ Este projeto utiliza um sistema de gerenciamento de pacotes e dependências cham
 
 - [Psycopg](https://www.psycopg.org/docs/index.html)
 
-## Esse projeto foi baseado 🤝:
+- [Jupyter notebook](https://jupyter.org/)
+
+- [Diagrams](https://diagrams.mingrammer.com/)
+
+## 🤝 Esse projeto foi baseado:
 
 https://github.com/AmeDigital/challenge-data-engineer
