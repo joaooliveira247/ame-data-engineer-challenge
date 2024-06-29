@@ -14,7 +14,7 @@
 >
 > Toda a parte de análise foi deixada em um arquivo .ipynb, pois ficaria mais fácil entender o fluxo e a resolução dos desafios.
 
-> Observação
+> Observação 2
 >
 > Fiz o desafio como se estivesse em ambiente de produção, portanto sem nenhum privilégio ou permissão.
 
