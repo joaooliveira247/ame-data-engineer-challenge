@@ -25,3 +25,7 @@
 ## Processo de ETL
 
 ### 🥉 Bronze Layer
+
+1º - Extração dos dados fornecidos em [Kaggle dataset](https://www.kaggle.com/datasets/stackoverflow/stack-overflow-2018-developer-survey?select=survey_results_public.csv), optei por usar os dados provenientes do kaggle ao invés do disponibilizado no desafio.
+
+2º - Tomei a liberdade de selecionar só as colunas usadas para evitar problemas de performance.  
