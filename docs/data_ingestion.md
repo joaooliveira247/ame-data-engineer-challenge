@@ -52,7 +52,16 @@
 
 10º - Criado os dataframes resp_programming_language que referencia tanto programming_language quanto respodent e resp_tools que referencia communication_tools e respodent.
 
+### 🥇 Gold Layer
 
+> Observação:
+>
+> Optei por usar o próprio sistema do spark para inserir os dados na tabela.
 
+1º - Inseridos dados referenciados por outras tabelas(company, country, operation_system, programming_language, comunication_tools)
+
+2º - Inserido a tabela respodent.
+
+3º - Inserido as tabelas que fazem mais de uma referência.
 
 
