@@ -10,6 +10,20 @@
 
 ### Número de clusters: 1
 
+## ⚠️ Observações
+
+> Observação 1
+>
+> Optei por usar o [Jupyter Notebook](https://jupyter.org/), pois deixaria todo processo mais claro e limpo.
+
+> Observação 2
+>
+> A code base foi feita toda em inglês para ficar semelhante ao mercado.
+
+> Observação 3
+>
+> Todo o Processo de ETL pode ser encontrado no [LINK](../ame_data_engineer_challenge/data_ingestion.ipynb)
+
 ## Executando a Ingestão de dados:
 
 1º - Inicie o container com postgresql
@@ -22,7 +36,7 @@
 
 3º - Execute todo [notebook](../ame_data_engineer_challenge/data_ingestion.ipynb)
 
-## Processo de ETL
+## [Processo de ETL](../ame_data_engineer_challenge/data_ingestion.ipynb)
 
 ### 🥉 Bronze Layer
 
